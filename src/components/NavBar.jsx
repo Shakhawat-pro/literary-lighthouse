@@ -13,6 +13,8 @@ const NavBar = () => {
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/listed-book">Listed Book</NavLink></li>
                             <li><NavLink to="/pages-to-read">Pages To Read</NavLink></li>
+                            <li><NavLink to="/about-us">About Us</NavLink></li>
+                            <li><NavLink to="/contact-us">Contact Us</NavLink></li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-lg md:text-3xl font-extrabold"><h1>Literary Lighthouse</h1></a>
@@ -22,6 +24,8 @@ const NavBar = () => {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/listed-book">Listed Book</NavLink></li>
                         <li><NavLink to="/pages-to-read">Pages To Read</NavLink></li>
+                        <li><NavLink to="/about-us">About Us</NavLink></li>
+                        <li><NavLink to="/contact-us">Contact Us</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end space-x-1">
