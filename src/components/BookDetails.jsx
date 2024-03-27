@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { saveBook, saveWish } from '../utils';
 
 
@@ -19,7 +19,7 @@ const BookDetails = () => {
         saveWish(idInt)
     }
     return (
-        <div className='flex flex-col lg:flex-row w-11/12 mx-auto max-h-[700px] gap-20 mt-24'>
+        <div className='flex flex-col lg:flex-row w-11/12 mx-auto max-h-[700px] gap-20 mt-28'>
             <Toaster
                 position="top-right"
                 reverseOrder={false}

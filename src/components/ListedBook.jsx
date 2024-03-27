@@ -3,6 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getBook, getWish } from '../utils';
+import ReadBooks from './ReadBooks';
+import WishlistBooks from './WishlistBooks';
 
 
 const ListedBook = () => {
@@ -48,11 +50,16 @@ const ListedBook = () => {
                     <TabList>
                         <Tab>Read Books</Tab>
                         <Tab>Wishlist Books</Tab>
-                    </TabList>
-                        
+                    </TabList>                        
                     <TabPanel>
+                         {
+                            bookmarkedBooks.map((book, index) => <ReadBooks key={index} book={book} ></ReadBooks>)
+                         }
                     </TabPanel>
                     <TabPanel>
+                        {
+                            wishlistedBooks.map((book, index) => <WishlistBooks key={index} book={book}></WishlistBooks>)
+                        }
 
                     </TabPanel>
                 </Tabs>
