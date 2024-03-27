@@ -8,8 +8,7 @@
     "totalPages": 281,
     "rating": 4.5,
     "category": "Fiction",
-    "tag1": "Classics",
-    "tag2": "Social Issues",
+    "tags": ["Classics", "Social Issues"],
     "publisher": "J. B. Lippincott & Co.",
     "yearOfPublishing": 1960
   },
@@ -22,8 +21,7 @@
     "totalPages": 328,
     "rating": 4.7,
     "category": "Science Fiction",
-    "tag1": "Dystopian",
-    "tag2": "Political",
+    "tags": ["Dystopian", "Political"],
     "publisher": "Secker & Warburg",
     "yearOfPublishing": 1949
   },
@@ -36,8 +34,7 @@
     "totalPages": 180,
     "rating": 4.3,
     "category": "Fiction",
-    "tag1": "Romance",
-    "tag2": "Jazz Age",
+    "tags": ["Romance", "Jazz Age"],
     "publisher": "Charles Scribner's Sons",
     "yearOfPublishing": 1925
   },
@@ -50,8 +47,7 @@
     "totalPages": 279,
     "rating": 4.6,
     "category": "Fiction",
-    "tag1": "Romance",
-    "tag2": "Classic Literature",
+    "tags": ["Romance", "Classic Literature"],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813
   },
@@ -64,8 +60,7 @@
     "totalPages": 309,
     "rating": 4.8,
     "category": "Fantasy",
-    "tag1": "Magic",
-    "tag2": "Adventure",
+    "tags": ["Magic", "Adventure"],
     "publisher": "Bloomsbury",
     "yearOfPublishing": 1997
   },
@@ -78,9 +73,47 @@
     "totalPages": 224,
     "rating": 4.4,
     "category": "Fiction",
-    "tag1": "Coming of Age",
-    "tag2": "American Literature",
+    "tags": ["Coming of Age", "American Literature"],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951
+  },
+  {
+    "id": 7,
+    "name": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "image": "./books/TheHobbit_FirstEdition.jpg",
+    "review": "A delightful adventure that introduces readers to the rich world of Middle-earth.",
+    "totalPages": 310,
+    "rating": 4.7,
+    "category": "Fantasy",
+    "tags": ["Adventure", "High Fantasy"],
+    "publisher": "Allen & Unwin",
+    "yearOfPublishing": 1937
+  },
+  {
+    "id": 8,
+    "name": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "image": "./books/DaVinciCode.jpg",
+    "review": "An intriguing blend of mystery, history, and conspiracy.",
+    "totalPages": 454,
+    "rating": 4.2,
+    "category": "Thriller",
+    "tags": ["Mystery", "Conspiracy"],
+    "publisher": "Doubleday",
+    "yearOfPublishing": 2003
+  },
+  {
+    "id": 9,
+    "name": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "image": "./books/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+    "review": "An epic tale of courage, friendship, and the battle against darkness.",
+    "totalPages": 1178,
+    "rating": 4.9,
+    "category": "Fantasy",
+    "tags": ["Epic Fantasy", "Adventure"],
+    "publisher": "Allen & Unwin",
+    "yearOfPublishing": 1954
   }
 ]
