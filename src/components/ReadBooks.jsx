@@ -4,30 +4,32 @@ import { useNavigate } from 'react-router-dom';
 const ReadBooks = ({ book }) => {
     const navigate = useNavigate()
     const { image, id, name, author, rating, category, tags, yearOfPublishing, publisher, totalPages } = book
-    const handleDetailClick = () =>{
+    const handleDetailClick = () => {
         navigate(`/book-details/${id}`)
     }
     return (
         <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl mt-8 border-2 p-8">
-                <div className='bg-base-200 p-10 rounded-lg'>
-                <img className='h-[300px] w-[250px] rounded-md' src={image} alt="" />
+            <div className="card max-md:flex-col max lg:card-side bg-base-100 shadow-xl mt-8 border-2 p-8">
+                <div className='bg-base-200 p-10 rounded-lg flex justify-center items-center'>
+                    <img className='h-[300px] w-[250px] rounded-md' src={image} alt="" />
                 </div>
                 <div className="card-body">
                     <h1 className="card-title text-4xl font-bold">{name}</h1>
                     <p className='text-lg font-medium'>By: {author}</p>
-                    <div className='flex items-center text-xl font-semibold'>
-                        <h2 className='text-xl font-semibold'>Tag:</h2>
-                        <h2 className='text-[#23BE0A] bg-[#F4FCF3] py-1 px-3 rounded-3xl text-xl font-semibold'>{tags[0]}</h2>
-                        <h2 className='text-[#23BE0A] bg-[#F4FCF3] py-1 px-3 rounded-3xl text-xl font-semibold'>{tags[1]}</h2>
-                        <h2 className='flex'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <div className='flex max-md:flex-col  text-xl font-semibold'>
+                        <div className='flex items-center'>
+                            <h2 className='text-xl font-semibold'>Tag:</h2>
+                            <h2 className='text-[#23BE0A] bg-[#F4FCF3] py-1 px-3 rounded-3xl text-xl font-semibold'>{tags[0]}</h2>
+                            <h2 className='text-[#23BE0A] bg-[#F4FCF3] py-1 px-3 rounded-3xl text-xl font-semibold'>{tags[1]}</h2>
+                        </div>
+                        <h2 className='flex my-4'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                         </svg>
                             Year of Publishing: {yearOfPublishing}
                         </h2>
                     </div>
-                    <div className='flex gap-8 font-semibold text-lg'>
+                    <div className='flex max-md:flex-col gap-8 font-semibold text-lg'>
                         <h2 className='flex items-center'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                         </svg>
