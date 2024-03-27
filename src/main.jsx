@@ -12,33 +12,35 @@ import Home from './components/Home.jsx';
 import BookDetails from './components/BookDetails.jsx';
 import AboutUS from './components/AboutUS.jsx';
 import ContactUs from './components/ContactUs.jsx';
+import ErrorPage from './components/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
-        loader: () => fetch('/public/books.json'),
+        loader: () => fetch('/books.json'),
         element: <Home></Home>
       },
       {
         path: '/listed-book',
-        loader: () => fetch('/public/books.json'),
+        loader: () => fetch('/books.json'),
         element: <ListedBook></ListedBook>
       },
       {
         path: '/pages-to-read',
-                loader: () => fetch('/public/books.json'),
+                loader: () => fetch('/books.json'),
 
         element: <PageToRead></PageToRead>
       },
       {
         path: '/book-details/:id',
         element: <BookDetails></BookDetails>,
-        loader: () => fetch('/public/books.json'),
+        loader: () => fetch('/books.json'),
       },
       {
         path: 'about-us',

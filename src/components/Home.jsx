@@ -13,7 +13,7 @@ const Home = () => {
         <div className="w-11/12 mx-auto mt-6">
             <div className="hero  bg-base-200 rounded-3xl py-10 p-7">
                 <div className=" flex items-center w-10/12 justify-between flex-col lg:flex-row-reverse ">
-                    <img src="/public/books/To_Kill_a_Mockingbird_(first_edition_cover).jpg" className="max-w-sm w-full rounded-lg shadow-2xl" />
+                    <img src="/books/To_Kill_a_Mockingbird_(first_edition_cover).jpg" className="max-w-sm w-full rounded-lg shadow-2xl" />
                     <div className="space-y-7">
                         <h1 className="text-6xl font-bold">Revitalize Your Bookshelf: Discover Your Next Literary Adventure</h1>
                         <button onClick={handleShowList} className="btn bg-[#23BE0A] text-white">View The List</button>
