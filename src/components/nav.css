@@ -1,0 +1,8 @@
+li a.active{
+    font-size: 18px;
+    font-weight: 600;
+    color: #23BE0A;
+    border: 2px solid #23BE0A;
+    padding: 14px 20px;
+    border-radius: 8px;
+}
