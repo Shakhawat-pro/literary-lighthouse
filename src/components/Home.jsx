@@ -23,7 +23,7 @@ const Home = () => {
             <h2 className="text-center text-4xl font-semibold my-16">Boos</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    books.map(book => <SoloBook key={books.bookId} book={book}></SoloBook>)
+                    books.map((book, index) => <SoloBook key={index} book={book}></SoloBook>)
                 }
             </div>
         </div>
