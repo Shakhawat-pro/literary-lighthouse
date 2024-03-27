@@ -1,16 +1,29 @@
+// import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import { saveBook, saveWish } from '../utils';
+
+
 
 const BookDetails = () => {
+
     const books = useLoaderData()
     const { id } = useParams()
     const idInt = parseInt(id)
     const book = books.find(book => book.id === idInt)
     const { image, name, author, rating, category, tags, totalPages, review, publisher, yearOfPublishing } = book
-
-    console.log(book)
-    console.log(id)
+    const handleReadList = () =>{
+        saveBook(id)
+    }
+    const handleWishist = () =>{
+        saveWish(id)
+    }
     return (
         <div className='flex flex-col lg:flex-row w-11/12 mx-auto max-h-[700px] gap-20 mt-24'>
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+            />
             <div className='bg-[#F4FCF3] rounded-3xl p-16 flex-1 flex justify-center items-center'>
                 <img className='max-h-full max-w-full rounded-xl' src={image} alt="" />
             </div>
@@ -50,11 +63,11 @@ const BookDetails = () => {
                     </table>
                 </div>
                 <div className="space-x-6 mt-9">
-                    <a className="btn border-[#23BE0A] bg-white max-sm:w-[70px]  text-black">Sign In</a>
-                    <a className="btn bg-[#59C6D2] max-sm:w-[70px]  text-white">Sing Up</a>
+                    <a onClick={handleReadList} className="btn border-[#23BE0A] bg-white max-sm:w-[70px]  text-black">Read</a>
+                    <a onClick={handleWishist}  className="btn bg-[#59C6D2] max-sm:w-[70px] text-white">Wishlist</a>
                 </div>
-
             </div>
+
         </div>
     );
 };
