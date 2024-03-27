@@ -10,11 +10,11 @@ const BookDetails = () => {
     console.log(book)
     console.log(id)
     return (
-        <div className='flex w-11/12 mx-auto max-h-[700px] gap-20 mt-24'>
+        <div className='flex flex-col lg:flex-row w-11/12 mx-auto max-h-[700px] gap-20 mt-24'>
             <div className='bg-[#F4FCF3] rounded-3xl p-16 flex-1 flex justify-center items-center'>
                 <img className='max-h-full max-w-full rounded-xl' src={image} alt="" />
             </div>
-            <div className='w-1/2 flex-1 flex flex-col justify-center'>
+            <div className='flex-1 flex flex-col justify-center'>
                 <h1 className='text-5xl font-bold'>{name}</h1>
                 <h2 className='text-lg my-5 font-medium'>By: {author}</h2>
                 <hr />
