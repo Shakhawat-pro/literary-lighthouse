@@ -13,10 +13,10 @@ const BookDetails = () => {
     const book = books.find(book => book.id === idInt)
     const { image, name, author, rating, category, tags, totalPages, review, publisher, yearOfPublishing } = book
     const handleReadList = () =>{
-        saveBook(id)
+        saveBook(idInt)
     }
     const handleWishist = () =>{
-        saveWish(id)
+        saveWish(idInt)
     }
     return (
         <div className='flex flex-col lg:flex-row w-11/12 mx-auto max-h-[700px] gap-20 mt-24'>

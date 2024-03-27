@@ -1,11 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { getBook, getWish } from '../utils';
 
 
 const ListedBook = () => {
     const [tabIndex, setTabIndex] = useState(0);
-    console.log(tabIndex)
+    const books = useLoaderData()
+    const [bookmarked, setBookmarked] = useState([]);
+    const [wishlisted, setWishlisted] = useState([]);
+
+    useEffect(() => {
+        const storedBookmarked = getBook();
+        const storedWishlisted = getWish();
+        setBookmarked(storedBookmarked);
+        setWishlisted(storedWishlisted);
+    }, []);
+
+    // Filter loaderData to include only bookmarked and wishlisted books
+    const bookmarkedBooks = books.filter(book => bookmarked.includes(book.id));
+    const wishlistedBooks = books.filter(book => wishlisted.includes(book.id));
+    console.log(bookmarkedBooks, 'read')
+    console.log(wishlistedBooks, "wisfd")
+
     return (
         <div className="w-11/12 mx-auto mt-10">
             <div className="bg-[#F3F3F3] text-center py-16 rounded-2xl">
@@ -31,9 +49,8 @@ const ListedBook = () => {
                         <Tab>Read Books</Tab>
                         <Tab>Wishlist Books</Tab>
                     </TabList>
+                        
                     <TabPanel>
-                        {/* Book from Book will creat a arry after clicking read <a>. and that arry will map hear
-                          */}
                     </TabPanel>
                     <TabPanel>
 
