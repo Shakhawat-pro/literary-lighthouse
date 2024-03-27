@@ -12,19 +12,37 @@ const ListedBook = () => {
     const books = useLoaderData()
     const [bookmarked, setBookmarked] = useState([]);
     const [wishlisted, setWishlisted] = useState([]);
+    const [sortedBooks, setSortedBooks] = useState([]);
 
     useEffect(() => {
         const storedBookmarked = getBook();
         const storedWishlisted = getWish();
         setBookmarked(storedBookmarked);
         setWishlisted(storedWishlisted);
+        setSortedBooks(books)
     }, []);
 
-    // Filter loaderData to include only bookmarked and wishlisted books
-    const bookmarkedBooks = books.filter(book => bookmarked.includes(book.id));
-    const wishlistedBooks = books.filter(book => wishlisted.includes(book.id));
-    console.log(bookmarkedBooks, 'read')
-    console.log(wishlistedBooks, "wisfd")
+    // const bookmarkedBooks = books.filter(book => bookmarked.includes(book.id));
+    // const wishlistedBooks = books.filter(book => wishlisted.includes(book.id));
+    // console.log(bookmarkedBooks, 'read')
+    // console.log(wishlistedBooks, "wisfd")
+
+    const sortByRating = () => {
+        const sortedByRating = [...sortedBooks].sort((a, b) => b.rating - a.rating);
+        setSortedBooks(sortedByRating);
+    };
+
+    const sortByPages = () => {
+        const sortedByPages = [...sortedBooks].sort((a, b) => b.totalPages - a.totalPages);
+        setSortedBooks(sortedByPages);
+    };
+
+    const sortByPublisherYear = () => {
+        const sortedByPublisherYear = [...sortedBooks].sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+        setSortedBooks(sortedByPublisherYear);
+    };
+
+    const filteredBooks = (tabIndex === 0) ? sortedBooks.filter(book => bookmarked.includes(book.id)) : sortedBooks.filter(book => wishlisted.includes(book.id));
 
     return (
         <div className="w-11/12 mx-auto mt-10">
@@ -39,9 +57,9 @@ const ListedBook = () => {
                         </svg>
                     </summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 border-2 border-[#23BE0A] rounded-box w-52">
-                        <li><a>Rating</a></li>
-                        <li><a>Number Of Pages</a></li>
-                        <li><a>Publisher Year</a></li>
+                        <li><button onClick={sortByRating}>Rating</button></li>
+                        <li><button onClick={sortByPages}>Number Of Pages</button></li>
+                        <li><button onClick={sortByPublisherYear}>Publisher Year</button></li>
                     </ul>
                 </details>
             </div>
@@ -50,15 +68,15 @@ const ListedBook = () => {
                     <TabList>
                         <Tab>Read Books</Tab>
                         <Tab>Wishlist Books</Tab>
-                    </TabList>                        
+                    </TabList>
                     <TabPanel>
-                         {
-                            bookmarkedBooks.map((book, index) => <ReadBooks key={index} book={book} ></ReadBooks>)
-                         }
+                        {
+                            filteredBooks.map((book, index) => <ReadBooks key={index} book={book} ></ReadBooks>)
+                        }
                     </TabPanel>
                     <TabPanel>
                         {
-                            wishlistedBooks.map((book, index) => <WishlistBooks key={index} book={book}></WishlistBooks>)
+                            filteredBooks.map((book, index) => <WishlistBooks key={index} book={book}></WishlistBooks>)
                         }
 
                     </TabPanel>

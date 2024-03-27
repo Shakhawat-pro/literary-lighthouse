@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const WishlistBooks = ({ book }) => {
-    const { image, name, author, rating, category, tags, yearOfPublishing, publisher, totalPages } = book
+    const { image, name, id, author, rating, category, tags, yearOfPublishing, publisher, totalPages } = book
+    const navigate = useNavigate()
+    const handleDetailClick = () =>{
+        navigate(`/book-details/${id}`)
+    }
 
     return (
         <div>
@@ -38,7 +43,7 @@ const WishlistBooks = ({ book }) => {
                     <div className="card-actions items-center  ">
                         <h2 className='text-[#23BE0A] bg-[#F4FCF3] py-1 px-3 rounded-3xl text-lg font-medium'>Category: {category}</h2>
                         <h2 className='text-[#FFAC33] bg-[#FFF3E0] py-1 px-3 rounded-3xl text-lg font-medium'>Rating: {rating}</h2>
-                        <button className="btn bg-[#23BE0A] text-white py-1 px-3 rounded-3xl text-lg font-medium">Listen</button>
+                        <button onClick={handleDetailClick} className="btn bg-[#23BE0A] text-white py-1 px-3 rounded-3xl text-lg font-medium">Listen</button>
                     </div>
                 </div>
             </div>
