@@ -10,10 +10,13 @@ Literary Lighthouse is a beacon for book lovers, providing a platform to discove
 5. **Listed Books**: Organize your book collection with ease using our "Listed Books" feature. Browse through your read and wishlist books, complete with detailed information and sorting options.
 
 ### Main Technologies Used:
-- React.js for frontend development.
-- HTML and CSS for styling and layout.
+- React.js With vite for frontend development.
+- React Router for Raouting  
+- HTML, CSS, Tailwind CSS for styling and layout.
+- daisy UI component for Tailwind
 - Local storage for storing user preferences and book data.
-- SweetAlert library for displaying toast notifications.
+- Toasty library for displaying toast notifications.
+- Recharts library for Bar chart
 
 ### Website URL:
 [Visit Literary Lighthouse](https://literary-lighthouse.netlify.app/) 
